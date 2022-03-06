@@ -37,62 +37,62 @@ export class User extends Model {
 
     }
 
-    save(){
+    save() {
 
         return User.findByEmail(this.email).set(this.toJSON());
 
     }
 
-    static getRef(){
-
+   
+    static getRef() {
+        
         return Firebase.db().collection('/users');
 
     }
 
-    static getContactsRef(id){
+    
+    static getContactRef(id) {
 
+        
         return User.getRef()
-        .doc(id)
-        .collection('contacts')
-
+            .doc(id)
+            .collection('contacts');
     }
 
-    static findByEmail(email){
+    static findByEmail(email) {
 
         return User.getRef().doc(email);
 
     }
-
     addContact(contact) {
 
-        return getContactsRef(this.email)
-        .doc(btoa(contact.email))
-        .set(contact.toJSON());
+        return User.getContactRef(this.email)
+            .doc(btoa(contact.email))
+            .set(contact.toJSON())
 
     }
 
-    getContacts(){
+    
+    getContacts(filter = '') {
 
-        return new Promise((s, f)=>{
-           
-            getContactsRef(this.email).onSnapshot(docs =>{
+        return new Promise((s, f) => {
+
+            
+            User.getContactRef(this.email).where('name', '>=', filter).onSnapshot(docs => {
 
                 let contacts = [];
 
-                docs.forEach(doc =>{
+                docs.forEach(doc => {
 
                     let data = doc.data();
-
                     data.id = doc.id;
-
                     contacts.push(data);
 
                 });
 
                 this.trigger('contactschange', docs);
-                
-                s(contacts);
 
+                s(contacts);
             });
 
         });
