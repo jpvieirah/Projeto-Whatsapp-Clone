@@ -17,7 +17,7 @@ export class Message extends Model {
     set status(value) { this._data.status = value; }
 
     get preview() { return this._data.preview; }
-    set preview(value) { this._data.preview = value; }
+    set preview(value) { this._data.preview = value; } 
 
     get filename() { return this._data.filename; }
     set filename(value) { this._data.filename = value; }

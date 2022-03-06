@@ -16,7 +16,7 @@ export class User extends Model {
     set chatId(value) { this._data.chatId = value; }
 
     static getRef(){
-        return Firebase.db().collection('users');
+        return Firebase.db().collection('users'); 
     }
 
     constructor(key){
