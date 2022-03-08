@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hcodebr/curso-javascript-projeto-whatsapp-clone.git"
+    "url": "git+https://github.com/viniciusnovais74/WhatsApp-Clone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hcodebr/curso-javascript-projeto-whatsapp-clone/issues"
+    "url": "https://github.com/viniciusnovais74/WhatsApp-Clone/issues"
   },
-  "homepage": "https://github.com/hcodebr/curso-javascript-projeto-whatsapp-clone#readme",
+  "homepage": "https://github.com/viniciusnovais74/WhatsApp-Clone#readme",
   "dependencies": {
     "firebase": "^5.0.4",
     "pdfjs-dist": "^2.0.489",
     "webpack": "^3.1.0",
-    "webpack-dev-server": "^2.11.5"
+    "webpack-dev-server": "^2.5.1"
   }
 }
