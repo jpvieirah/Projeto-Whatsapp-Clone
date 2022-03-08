@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-clone",
+  "name": "curso-javascript-projeto-whatsapp-clone",
   "version": "1.0.0",
   "description": "[![Hcode Treinamentos](https://www.hcode.com.br/res/img/hcode-200x100.png)](https://www.hcode.com.br)",
   "main": "index.js",
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jpvieirah/Projeto-WhatsApp-Clone.git"
+    "url": "git+https://github.com/hcodebr/curso-javascript-projeto-whatsapp-clone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jpvieirah/Projeto-WhatsApp-Clone/issues"
+    "url": "https://github.com/hcodebr/curso-javascript-projeto-whatsapp-clone/issues"
   },
-  "homepage": "https://github.com/jpvieirah/Projeto-WhatsApp-Clone#readme",
+  "homepage": "https://github.com/hcodebr/curso-javascript-projeto-whatsapp-clone#readme",
   "dependencies": {
     "firebase": "^5.0.4",
     "pdfjs-dist": "^2.0.489",
     "webpack": "^3.1.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^2.11.5"
   }
 }
