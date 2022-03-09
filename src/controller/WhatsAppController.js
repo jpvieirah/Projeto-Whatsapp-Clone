@@ -4,7 +4,7 @@ import {MicrophoneController} from './MicrophoneController';
 import {DocumentPreviewController} from './DocumentPreviewController';
 import { Firebase } from './../util/Firebase';
 import { User } from '../model/User';
-import { Chat } from '../model/Chat';
+import { Chat } from '../model/chat';
 import { Message } from '../model/Message';
 import { Base64 } from "../util/base64";
 import { ContactsController } from './ContactsController';
