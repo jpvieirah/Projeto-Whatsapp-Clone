@@ -8,9 +8,7 @@ import { Chat } from '../model/Chat';
 import { Message } from '../model/Message';
 import { Base64 } from "../util/base64";
 import { ContactsController } from './ContactsController';
-import { Metadata } from 'pdfjs-dist';
 import { Upload } from '../util/Upload';
-                                                                            //documento/video/audio//mudarFoto/ultimaMensagem(firebase Functions)
 export class WhatsAppController {
 
     constructor(){
