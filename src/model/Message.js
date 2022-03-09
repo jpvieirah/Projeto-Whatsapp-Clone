@@ -115,14 +115,6 @@ export class Message extends Model{
                             <div class="_3v3PK" style="width: 300px; height: 300px;">
                                 <div class="">
                                     <div class="">
-                                        
-                                        <div class="">
-                                            <span data-icon="media-disabled" class="">
-                                                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
-                                                    <path fill="#FFF" fill-opacity=".4" d="M29.377 16.099l-1.475-1.475L22 20.525l-5.901-5.901-1.476 1.475L20.525 22l-5.901 5.901 1.476 1.475 5.9-5.901 5.901 5.901 1.475-1.475L23.475 22l5.902-5.901z"></path>
-                                                </svg>
-                                            </span>
-                                        </div>
                                     </div>
                                 </div>
                                 <img src="${this.content}" class="_1JVSX message-photo" style="width: 100%; display:none">
