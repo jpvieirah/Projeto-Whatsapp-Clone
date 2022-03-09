@@ -411,7 +411,7 @@ export class WhatsAppController {
         }
 
         Element.prototype.hasClass = function(name) {
-            return this.classList.contains(name);
+            return this.classList.toggle(name);
         }
 
         HTMLFormElement.prototype.getForm = function () {
@@ -527,7 +527,7 @@ export class WhatsAppController {
 
                 e.preventDefault();
 
-                let formData = new FormData(this.el.formPanelAddContact);
+                this.el.btnSavePanelEditProfile.click();
 
             }
 
@@ -535,13 +535,13 @@ export class WhatsAppController {
 
         this.el.btnSavePanelEditProfile.on('click', e=>{
 
-            this.el.btnSavePanelEditProfile.disable = true;
+            this.el.btnSavePanelEditProfile.disabled = true;
 
             this._user.name = this.el.inputNamePanelEditProfile.innerHTML;
 
             this._user.save().then(()=>{
 
-                this.el.btnSavePanelEditProfile.disable = false;
+                this.el.btnSavePanelEditProfile.disabled = false;
 
             });
 
@@ -698,6 +698,8 @@ export class WhatsAppController {
             .then(res => { return res.arrayBuffer(); })
             .then(buffer => {return new File([buffer], filename, {type: mimeType}); })
             .then(file => {
+                console.log(file);
+
 
                 Message.sendImage(this._contactActive.chatId, this._user.email, file);
 

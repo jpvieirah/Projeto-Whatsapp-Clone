@@ -155,7 +155,7 @@ export class Message extends Model{
 
                     div.querySelector('.message-photo').show();
                     div.querySelector('._340lu').hide();
-                    div.querySelector('._3v3PK').css({
+                    div.querySelector('._340lu').css({
                         height: 'auto'
                     });
                 });
@@ -423,9 +423,9 @@ export class Message extends Model{
 
         return Message.send(chatId, from, 'audio', '').then(msgRef=>{
 
-            Message.upload(file, from).then(snapshot=>{
+            Message.upload(file, from).then(downloadURL=>{
 
-                let downloadFile = snapshot.downloadURL;
+                let downloadFile = downloadURL;
 
                 msgRef.set({
                     content: downloadFile,
@@ -499,13 +499,13 @@ export class Message extends Model{
     
         return new Promise ((s, f)=>{
 
-            Message.upload(file, from).then(snapshot=>{
+            Message.upload(file, from).then(downloadURL=>{
 
                 Message.send(
                     chatId,
                     from,
                     'image',
-                    snapshot.downloadURL
+                    downloadURL
                 ).then(()=>{
 
                     s();
