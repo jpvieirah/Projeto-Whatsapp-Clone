@@ -112,15 +112,11 @@ export class Message extends Model{
                 <div class="_3_7SH _3qMSo">
                     <div class="KYpDv">
                         <div>
-                            <div class="_3v3PK" style="width: 330px; height: 330px;">
-                                <div class="_34Olu">
-                                    <div class="_2BzIU">
-                                        <div class="_2X3l6">
-                                            <svg class="_1UDDE" width="50" height="50" viewBox="0 0 43 43">
-                                                <circle class="_3GbTq _2wGBy" cx="21.5" cy="21.5" r="20" fill="none" stroke-width="3"></circle>
-                                            </svg>
-                                        </div>
-                                        <div class="_1l3ap">
+                            <div class="_3v3PK" style="width: 300px; height: 300px;">
+                                <div class="">
+                                    <div class="">
+                                        
+                                        <div class="">
                                             <span data-icon="media-disabled" class="">
                                                 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
                                                     <path fill="#FFF" fill-opacity=".4" d="M29.377 16.099l-1.475-1.475L22 20.525l-5.901-5.901-1.476 1.475L20.525 22l-5.901 5.901 1.476 1.475 5.9-5.901 5.901 5.901 1.475-1.475L23.475 22l5.902-5.901z"></path>
@@ -255,13 +251,14 @@ export class Message extends Model{
                 let btnPlay = div.querySelector('.audio-play');
                 let btnPause = div.querySelector('.audio-pause');
                 let inputRange = div.querySelector('[type=range]');
+                let audioDuration = div.querySelector('.message-audio-duration');
 
                 audioEl.onloadeddata = e =>{
 
                     loadEl.hide();
                     btnPlay.show();
 
-                };
+                }
 
                 audioEl.onplay = e => {
 
@@ -272,9 +269,9 @@ export class Message extends Model{
 
                 audioEl.onpause = e => {
 
-                    div.querySelector('.message-audio-duration').innerHTML = Format.toTime(this.duration);
-                    btnPlay.hide();
-                    btnPause.show();
+                    audioDuration.innerHTML = Format.toTime(this.duration*1000);
+                    btnPlay.show();
+                    btnPause.hide();
 
                 }
 
@@ -306,13 +303,13 @@ export class Message extends Model{
 
                     audioEl.play();
 
-                });
+                })
 
                 btnPause.on('click', e=>{
 
                     audioEl.pause();
 
-                });
+                })
 
                 inputRange.on('change', e=>{
 
@@ -431,17 +428,17 @@ export class Message extends Model{
                     content: downloadFile,
                     size: file.size,
                     fileType: file.type,
-                    status: 'sent',
+                    status: 'send',
                     photo,
                     duration: metadata.duration
                 }, {
 
                     merge: true
 
-                });
+                })
 
             });
-        });
+        })
     }
 
     static sendDocument(chatId, from, file, filePreview, info) {
@@ -464,7 +461,7 @@ export class Message extends Model{
                         filename: file.name,
                         size: file.size,
                         fileType: file.type,
-                        status: 'sent',
+                        status: 'send',
                         info
                     }, {
 
@@ -481,7 +478,7 @@ export class Message extends Model{
                     filename: file.name,
                     size: file.size,
                     fileType: file.type,
-                    status: 'sent',
+                    status: 'send',
                 }, {
 
                     merge: true
@@ -532,7 +529,7 @@ export class Message extends Model{
         let docRef = result.parent.doc(result.id);
 
         docRef.set({
-            status: 'sent'
+            status: 'send'
         }, {
             merge:true
         }).then(()=>{
@@ -572,7 +569,7 @@ export class Message extends Model{
                 `;
             break;
 
-            case 'sent':
+            case 'send':
                 div.innerHTML = `  
                 <span data-icon="msg-check">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15" width="16" height="15">
